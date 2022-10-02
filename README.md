@@ -1,2 +1,2 @@
-# personal-python-project-template
-Personal template for python project with source directory
+# headtype
+Helps in choosing correct type/class based on certain conditions.
