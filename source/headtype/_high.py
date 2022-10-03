@@ -42,14 +42,22 @@ def extract_type(type_):
     return type_.get_type()
 
 
-def find_matching_types(object_, types_, limit=None):
+def find_matching_types(object_, types, limit=None):
     '''Finds type matching provided object.'''
-    master = create_master(object_, types_)
+    master = create_master(object_, types)
     types = master.get_matching_types(limit)
     return extract_types(types)
 
-def find_matching_type(object_, types_):
+def find_matching_type(object_, types):
     '''Finds type matching provided object.'''
-    master = create_master(object_, types_)
+    master = create_master(object_, types)
     type = master.get_matching_type()
     if type: return extract_type(type)
+
+def object_matches_type(object_, type_):
+    '''Checks if object matches provided type'''
+    if find_matching_type(object_, [type_]):
+        return True
+    else:
+        return False
+
